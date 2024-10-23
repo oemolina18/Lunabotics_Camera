@@ -8,6 +8,6 @@ clientsocket=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 clientsocket.connect(('10.0.0.74',8089))
 while True:
     ret,frame=cap.read()
-    print sys.getsizeof(frame)
-    print frame
+    print (sys.getsizeof(frame))
+    print (frame)
     clientsocket.send(pickle.dumps(frame))

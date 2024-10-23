@@ -7,18 +7,18 @@ HOST='10.0.0.74'
 PORT=8089
 
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-print 'Socket created'
+print ('Socket created')
 
 s.bind((HOST,PORT))
-print 'Socket bind complete'
+print ('Socket bind complete')
 s.listen(10)
-print 'Socket now listening'
+print ('Socket now listening')
 
 conn,addr=s.accept()
 
 while True:
     data=conn.recv(80)
-    print sys.getsizeof(data)
+    print (sys.getsizeof(data))
     frame=pickle.loads(data)
-    print frame
+    print (frame)
     cv2.imshow('frame',frame)
